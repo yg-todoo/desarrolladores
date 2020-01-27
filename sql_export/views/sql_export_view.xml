@@ -48,7 +48,7 @@
         <field name="name">Sql_export_tree_view</field>
         <field name="model">sql.export</field>
         <field name="arch" type="xml">
-            <tree string="SQL Export" colors="blue:state == 'draft'">
+            <tree string="SQL Export"> <!--colors="blue:state == 'draft'"-->
                 <field name="name"/>
                 <field name="state"/>
                 <button name="export_sql_query" string="Execute Query" states="sql_valid" type="object"
