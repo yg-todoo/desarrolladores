@@ -25,4 +25,14 @@
             </form>
         </field>
     </record>
+    <record id="statusbar_view_tree" model="ir.ui.view">
+        <field name="name">Statusbar</field>
+            <field name="model">statusbar.statusbar</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Workflow record">
+                    <field name="state"/> 
+                </tree>
+            </field>         
+    </record>
 </odoo>
