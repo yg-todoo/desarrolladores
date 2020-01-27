@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!--
+                                        Form 'Entities EPS'
+        -->
+        <!-- Form view -->
+        <record id="newlabnutrition_payroll_eps_form_view" model="ir.ui.view">
+            <field name="name">newlabnutrition.payroll.eps.form</field>
+            <field name="model">newlabnutrition.payroll.eps</field>
+            <field name="arch" type="xml">
+                <form string="Entities Form">
+                    <sheet name="sheet_form_view">
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="name"
+                                       placeholder="Nombre de la EPS"
+                                       required="True"/>
+                            </h1>
+                        </div>
+                        <group name="group_form_view">
+                            <group name="group_left">
+                                <field name="start_date"/>
+                                <field name="phone_number"/>
+                            </group>
+                            <group name="group_right">
+                                <field name="email"/>
+                                <field name="commercial_entity"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree view -->
+        <record model="ir.ui.view" id="EPS_tree_view">
+            <field name="name">newlabnutrition.payroll.eps.tree</field>
+            <field name="model">newlabnutrition.payroll.eps</field>
+            <field name="arch" type="xml">
+                <tree string="Course Tree">
+                    <field name="name"/>
+                    <field name="start_date"/>
+                    <field name="phone_number"/>
+                    <field name="email"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Event -->
+        <record model="ir.actions.act_window" id="EPS_list_action">
+            <field name="name">Lista de Entitades de EPS</field>
+            <field name="res_model">newlabnutrition.payroll.eps</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--
+                                        Form 'Entities Pensión'
+        -->
+        <!-- Form view -->
+        <record id="newlabnutrition_payroll_pension_form_view" model="ir.ui.view">
+            <field name="name">newlabnutrition.payroll.pension.form</field>
+            <field name="model">newlabnutrition.payroll.pension</field>
+            <field name="arch" type="xml">
+                <form string="Entities Form">
+                    <sheet name="sheet_form_view">
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="name"
+                                       placeholder="Nombre del Fondo de Pensión"
+                                       required="True"/>
+                            </h1>
+                        </div>
+                        <group name="group_form_view">
+                            <group name="group_left">
+                                <field name="start_date"/>
+                                <field name="phone_number"/>
+                            </group>
+                            <group name="group_right">
+                                <field name="email"/>
+                                <field name="commercial_entity"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree view -->
+        <record model="ir.ui.view" id="newlabnutrition_payroll_pension_tree_view">
+            <field name="name">newlabnutrition.payroll.pension.tree</field>
+            <field name="model">newlabnutrition.payroll.pension</field>
+            <field name="arch" type="xml">
+                <tree string="Course Tree">
+                    <field name="name"/>
+                    <field name="start_date"/>
+                    <field name="phone_number"/>
+                    <field name="email"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Event -->
+        <record model="ir.actions.act_window" id="newlabnutrition_payroll_pension_list_action">
+            <field name="name">Lista de Fondos de Pensiones</field>
+            <field name="res_model">newlabnutrition.payroll.pension</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+                <!--
+                                        Form 'Entities Cesantias'
+        -->
+        <!-- Form view -->
+        <record id="newlabnutrition_payroll_cesantia_form_view" model="ir.ui.view">
+            <field name="name">newlabnutrition.payroll.cesantia.form</field>
+            <field name="model">newlabnutrition.payroll.cesantia</field>
+            <field name="arch" type="xml">
+                <form string="Entities Form">
+                    <sheet name="sheet_form_view">
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="name"
+                                       placeholder="Nombre del Fondo de Cesantias"
+                                       required="True"/>
+                            </h1>
+                        </div>
+                        <group name="group_form_view">
+                            <group name="group_left">
+                                <field name="start_date"/>
+                                <field name="phone_number"/>
+                            </group>
+                            <group name="group_right">
+                                <field name="email"/>
+                                <field name="commercial_entity"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree view -->
+        <record model="ir.ui.view" id="newlabnutrition_payroll_cesantia_tree_view">
+            <field name="name">newlabnutrition.payroll.cesantia.tree</field>
+            <field name="model">newlabnutrition.payroll.cesantia</field>
+            <field name="arch" type="xml">
+                <tree string="Course Tree">
+                    <field name="name"/>
+                    <field name="start_date"/>
+                    <field name="phone_number"/>
+                    <field name="email"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Event -->
+        <record model="ir.actions.act_window" id="newlabnutrition_payroll_cesantia_list_action">
+            <field name="name">Lista de Fondos de Cesantias</field>
+            <field name="res_model">newlabnutrition.payroll.cesantia</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

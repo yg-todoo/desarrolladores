@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_newlabnutrition.payroll.eps,access.newlabnutrition.payroll.eps,model_newlabnutrition_payroll_eps,base.group_user,1,1,1,1
+access_newlabnutrition.payroll.pension,access.newlabnutrition.payroll.pension,model_newlabnutrition_payroll_pension,base.group_user,1,1,1,1
+access_newlabnutrition.payroll.cesantia,access.newlabnutrition.payroll.cesantia,model_newlabnutrition_payroll_cesantia,base.group_user,1,1,1,1
+access_newlabnutrition.payroll.overtime,access.newlabnutrition.payroll.overtime,model_newlabnutrition_payroll_overtime,base.group_user,1,1,1,1
+access_newlabnutrition.payroll.vacations.days,access.newlabnutrition.payroll.vacations.days,model_newlabnutrition_payroll_vacations_days,base.group_user,1,1,1,1
+access_newlabnutrition.payroll.incapacity.days,access.newlabnutrition.payroll.incapacity.days,model_newlabnutrition_payroll_incapacity_days,base.group_user,1,1,1,1
+access_newlabnutrition.payroll.salary.income,access.newlabnutrition.payroll.salary.income,model_newlabnutrition_payroll_salary_income,base.group_user,1,1,1,1
+access_newlabnutrition.payroll.deductions,access.newlabnutrition.payroll.deductions,model_newlabnutrition_payroll_deductions,base.group_user,1,1,1,1

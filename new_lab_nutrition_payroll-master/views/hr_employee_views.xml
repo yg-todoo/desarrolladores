@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2019 Odoo Inc -->
+<odoo>
+    <!--
+                                    hr.employee Form view
+    -->
+    <record id="hr_employee_form_newlabnutrition_payroll"
+            model="ir.ui.view">
+        <field name="name">hr.employee.form.newlabnutrition_payroll</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <data>
+                <!-- Mod attributes -->
+                <xpath expr="//field[@name='passport_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='km_home_work']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='address_home_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='emergency_contact']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='emergency_phone']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='children']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='identification_id']" position="attributes">
+                    <attribute name="required">True</attribute>
+                </xpath>
+                <xpath expr="//field[@name='mobile_phone']" position="attributes">
+                    <attribute name="string">Celular N°</attribute>
+                </xpath>
+                <xpath expr="//field[@name='bank_account_id']" position="attributes">
+                    <attribute name="string">Número de Cuenta Bancaria</attribute>
+                </xpath>
+                <xpath expr="//field[@name='study_field']" position="attributes">
+                    <attribute name="string">Título obtenido</attribute>
+                </xpath>
+                <xpath expr="//field[@name='study_school']" position="attributes">
+                    <attribute name="string">Institución</attribute>
+                </xpath>
+
+
+                <!-- Mov fields -->
+                <xpath expr="//field[@name='work_email']" position="before">
+                    <field name="country_of_birth" position="move"/>
+                </xpath>
+                <xpath expr="//field[@name='study_school']" position="after">
+                    <field name="study_field" position="move"/>
+                </xpath>
+
+                <!-- Add fields -->
+                <xpath expr="//field[@name='work_email']" position="after">
+                    <field name="work_mobile_phone"/>
+                </xpath>
+                <xpath expr="//field[@name='country_id']" position="after">
+                    <field name="documento_type"/>
+                    <field name="document_type_name"
+                           attrs="{'invisible': [('documento_type', 'not in', ['other'])]}"
+                           groups="hr.group_hr_user"/>
+                </xpath>
+                <xpath expr="//field[@name='identification_id']" position="after">
+                    <field name="expedition_place"/>
+                    <field name="rh"/>
+                </xpath>
+                <xpath expr="//field[@name='is_address_home_a_company']" position="after">
+                    <field name="bank_account_id" position="move"/>
+                    <field name="personal_address"/>
+                    <field name="personal_email"/>
+                    <field name="mobile_phone" position="move"/>
+                    <field name="personal_number"/>
+                </xpath>
+
+                <!-- Add Page -->
+                <xpath expr="//page[last()]" position="before">
+                    <page name="emegency_contact" string="Información de contacto de emergencia">
+                        <group>
+                            <group name="emegency_contact_1" string="Contacto de Emergencia">
+                                <field name="emergency_contact" string="Nombres y Apellidos"/>
+                                <field name="emergency_phone" string="N° Celular"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+                <xpath expr="//page[last()]" position="before">
+                    <page name="family_information" string="Información Familiar">
+                        <group>
+                            <group name="father_information" string="Información del Padre">
+                                <field name="father_name"/>
+                                <field name="father_address"/>
+                                <field name="father_phone_number"/>
+                            </group>
+                            <group name="mother_information" string="Información de la Madre">
+                                <field name="mother_name"/>
+                                <field name="mother_address"/>
+                                <field name="mother_phone_number"/>
+                            </group>
+                            <group name="son_information" string="Información de los Hijos">
+                                <field name="children"/>
+                                <field name="son_name_1"
+                                       attrs="{'invisible': [('children', 'not in', (1, 2, 3, 4, 5, 6))]}"
+                                       groups="hr.group_hr_user"/>
+                                <field name="son_name_2"
+                                       attrs="{'invisible': [('children', 'not in', (2, 3, 4, 5, 6))]}"
+                                       groups="hr.group_hr_user"/>
+                                <field name="son_name_3"
+                                       attrs="{'invisible': [('children', 'not in', (3, 4, 5, 6))]}"
+                                       groups="hr.group_hr_user"/>
+                                <field name="son_name_4"
+                                       attrs="{'invisible': [('children', 'not in', (4, 5, 6))]}"
+                                       groups="hr.group_hr_user"/>
+                                <field name="son_name_5"
+                                       attrs="{'invisible': [('children', 'not in', (5, 6))]}"
+                                       groups="hr.group_hr_user"/>
+                                <field name="son_name_6"
+                                       attrs="{'invisible': [('children', 'not in', (6))]}"
+                                       groups="hr.group_hr_user"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+                <xpath expr="//group[@name='active_group']" position="before">
+                    <group name="group_entities_1" string="Afiliaciones">
+                        <field name="eps"/>
+                        <field name="pension"/>
+                        <field name="cesantias"/>
+                        <field name="arl"/>
+                        <field name="ccj"/>
+                    </group>
+                    <group name="group_entities_2" string="ARL">
+                        <field name="lv_arl"/>
+                    </group>
+                </xpath>
+            </data>
+        </field>
+    </record>
+</odoo>
+

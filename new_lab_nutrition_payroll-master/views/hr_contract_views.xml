@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2019 Odoo Inc -->
+<odoo>
+    <!--
+                                    hr.contract Form view
+    -->
+    <record id="hr_contract_form_newlabnutrition_payroll"
+            model="ir.ui.view">
+        <field name="name">hr.contract.form.newlabnutrition_payroll</field>
+        <field name="model">hr.contract</field>
+        <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+        <field name="arch" type="xml">
+            <data>
+                <!-- Mod attributes -->
+                <xpath expr="//field[@name='reported_to_secretariat']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//group[@name='salary_and_advantages']" position="attributes">
+                    <attribute name="string">Salario base</attribute>
+                </xpath>
+
+                <!-- Add fields -->
+                <xpath expr="//group[@name='main_info']" position="before">
+                    <group colspan="2" col="4" name="salario_min">
+                        <separator colspan="2" string="Salario Mínimo"/>
+                            <field name="smmlv"/>
+                    </group>
+                </xpath>
+                <xpath expr="//page[last()]" position="after">
+                    <page string="Información RRHH">
+                        <separator colspan="2" string="Entidad Promotora de Salud"/>
+                        <group>
+                            <field name="EPS"/>
+                        </group>
+                        <separator colspan="2" string="Fondo de Pensión"/>
+                        <group>
+                            <field name="pension"/>
+                        </group>
+                        <separator colspan="2" string="Fondo de Cesantias"/>
+                        <group>
+                            <field name="cesantia"/>
+                        </group>
+                    </page>
+                </xpath>
+            </data>
+        </field>
+    </record>
+</odoo>

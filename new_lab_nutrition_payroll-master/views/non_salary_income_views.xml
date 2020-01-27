@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!--
+                                        Form 'Overtime'
+        -->
+        <!-- Form view -->
+        <record id="newlabnutrition_payroll_non_salary_income_form_view"
+                model="ir.ui.view">
+            <field name="name">newlabnutrition.payroll.non.salary.income.form</field>
+            <field name="model">newlabnutrition.payroll.non.salary.income</field>
+            <field name="arch" type="xml">
+                <form string="Non Salary Income Form">
+                    <sheet name="sheet_form_view">
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="name"
+                                       placeholder="Tipo de Ingreso Adicional"
+                                       required="True"/>
+                            </h1>
+                        </div>
+                        <group name="group_form_view">
+                            <group name="group_left">
+                                <field name="code"/>
+                            </group>
+                            <group name="group_right">
+                                <field name="value" invisible="1"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree view -->
+        <record model="ir.ui.view" id="newlabnutrition_payroll_non_salary_income_tree_view">
+            <field name="name">newlabnutrition.payroll.non.salary.income.tree</field>
+            <field name="model">newlabnutrition.payroll.non.salary.income</field>
+            <field name="arch" type="xml">
+                <tree string="Non Salary Income Tree" editable="bottom">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="value"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Event -->
+        <record model="ir.actions.act_window"
+                id="newlabnutrition_payroll_non_salary_income_list_action">
+            <field name="name">Lista de Ingresos Adicionales</field>
+            <field name="res_model">newlabnutrition.payroll.non.salary.income</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

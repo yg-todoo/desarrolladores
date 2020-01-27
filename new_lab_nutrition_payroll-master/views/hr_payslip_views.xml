@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2019 Odoo Inc -->
+<odoo>
+    <!--
+                                    hr.payslip Form view
+    -->
+    <record id="hr_payslip_form_newlabnutrition_payroll"
+            model="ir.ui.view">
+        <field name="name">hr.payslip.form.newlabnutrition_payroll</field>
+        <field name="model">hr.payslip</field>
+        <field name="inherit_id" ref="hr_payroll.view_hr_payslip_form"/>
+        <field name="arch" type="xml">
+            <data>
+                <!-- Add fields -->
+                <xpath expr='//page[last()]' position="after">
+                    <page string="Ingresos Constitutivos de Salario" name="salary_income_1">
+                        <separator colspan="2" string="Horas extra y recargos" name="separator_1"/>
+                        <field name="overtime_line_ids"/>
+                        <separator colspan="2" string="Días de Vacaciones" name="separator_2"/>
+                        <field name="vacations_days_line_ids"/>
+                        <separator colspan="2" string="Días de Incapacidad" name="separator_3"/>
+                        <field name="incapacity_days_line_ids"/>
+                        <separator colspan="2" string="Días de Licencia" name="separator_4"/>
+                        <field name="license_days_line_ids"/>
+                        <separator colspan="2" string="Ingresos Adicionales" name="separator_5"/>
+                        <field name="salary_income_line_ids"/>
+                    </page>
+                    <page string="Ingresos No Constitutivos de Salario" name="salary_income_2">
+                        <separator colspan="2" string="Ingresos Adicionales" name="separator_5"/>
+                        <field name="non_salary_income_line_ids"/>
+                    </page>
+                    <page string="Retenciones y Deducciones" name="deductions">
+                        <separator colspan="2" string="Deducciones" name="separator_6"/>
+                        <field name="deductions_line_ids"/>
+                    </page>
+                </xpath>
+            </data>
+        </field>
+    </record>
+</odoo>
