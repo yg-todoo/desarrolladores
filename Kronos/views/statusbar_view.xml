@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
+    <record model="ir.actions.act_window" id="statusbar_action_window">
+      <field name="name">Statusbar</field>
+      <field name="res_model">statusbar.statusbar</field>
+      <field name="view_mode">tree,form</field>
+    </record>
     <record model="ir.ui.view" id="view_statusbar_form">
         <field name="name">Statusbar</field>
         <field name="model">statusbar.statusbar</field>
         <field name="type">form</field>
         <field name="arch" type="xml">
-            <form string="Workflow record">
+            <form string="Statusbar">
 <!--The header tag is built to add buttons within. This puts them at the top -->
                 <header>
                     <button string="Información Basica" type="object" name="informacion_basica" attrs="{'invisible': [('state', '=', 'Basica')]}"/>
@@ -25,14 +30,15 @@
             </form>
         </field>
     </record>
-    <record id="statusbar_view_tree" model="ir.ui.view">
+    <record model="ir.ui.view" id="view_statusbar_tree">
         <field name="name">Statusbar</field>
-            <field name="model">statusbar.statusbar</field>
-            <field name="type">tree</field>
+        <field name="model">statusbar.statusbar</field>
+        <field name="type">tree</field>
             <field name="arch" type="xml">
-                <tree string="Workflow record">
-                    <field name="state"/> 
+                <tree string="Statusbar">
+                    <field name="referencia_supra"/>
+                    <field name="state"/>
                 </tree>
-            </field>         
+            </field>
     </record>
 </odoo>

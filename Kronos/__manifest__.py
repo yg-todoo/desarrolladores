@@ -11,13 +11,11 @@
 
     'version': "1.0",
 
-    'depends': ['base',],
+    'depends': ['base'],
 
-    'data': [
-        'views/statusbar_view.xml',
-        'security/ir.model.access.csv',
-    ],
+    'data': ['views/statusbar_view.xml'],
 
-    'auto_install': True,
-    'application': True,    
+    'installable': True,
+    'application': True,
+    'auto_install': True,    
 }
