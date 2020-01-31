@@ -4,14 +4,14 @@
 import logging
 import urllib2
 import base64
-from odoo import api, fields, models
+from odoo import api, fields, models,_
 
 
 class CustomImport(models.TransientModel):
 
     _inherit = 'base_import.import'
 
-
+    @api.model
     def _parse_import_data(self, data, import_fields, options):
         # Get fields of type date/datetime
         data = super(CustomImport, self)._parse_import_data(
