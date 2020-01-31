@@ -22,7 +22,7 @@ from odoo import api, exceptions, fields, models, _
 class IrAttachment(models.Model):
     _inherit = 'ir.attachment'
 
-    @api.multi
+    @api.model
     def action_download_attachment(self):
         tab_id = []
         for attachment in self:
