@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-import logging
-import urllib2
-import base64
+from. import logging
+from. import urllib2
+from. import base64
 from odoo import api, fields, models,_
 
 
